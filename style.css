@@ -1,0 +1,542 @@
+
+			body {
+				font-family: "Montserrat","HelveticaNeue","Helvetica Neue",sans-serif;
+				font-size: 16px;
+				text-align: center;
+				padding: 0;
+				margin: 0;
+				background-color: white;
+				color: #585858;
+				-webkit-font-smoothing: antialiased;
+				-webkit-text-size-adjust: 100%;
+			}
+
+			h1 {
+				display: block;
+				font-size: 2em;
+				margin-block-start: 0em;
+				margin-block-end: 0.67em;
+				margin-inline-start: 0px;
+				margin-inline-end: 0px;
+				font-weight: bold;
+			}
+
+			h5 {
+				font-size: 1.05em;
+				margin: 8px 0px 8px 0px;
+			}
+
+			/* Make the website top down */
+
+			div {
+				display: flex;
+				flex-direction: column;
+				border-radius: 4px;
+			}
+
+			/* Check */
+			/**{border:1px solid black;}*/
+
+			/* Make sure the weblinks have no formatting in general */
+
+			a:visited {
+				text-decoration: none;
+				
+			}
+
+			a:link {
+				text-decoration: none;
+			}
+
+			a{
+				display: inline;
+				color: #585858;
+			}
+
+			/* Delete bullet points */
+
+			ul {
+				list-style-type: none;
+			}
+
+			button {
+				font-family: "Montserrat","HelveticaNeue","Helvetica Neue",sans-serif;
+				font-size: 16px;
+				background-color: #2d2d2d;
+				color: white;
+				border-radius: 4px;
+				border-style: none;
+			}
+
+
+			/* Add margin on the right and left of the website if full screen */
+
+			.wrapper {
+				margin-right: auto; 
+				margin-left:  auto; 
+				max-width: 1000px; 
+				padding-right: 10px;
+				padding-left:  10px; 
+			}	
+
+
+
+			/* Flexbox for header*/
+
+			header {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+			}
+
+			@media all and (max-width: 670px){
+						header {
+							display: flex;
+							flex-direction: column;
+							justify-content: space-between;
+							align-items: center;
+						}
+					}
+
+
+
+
+
+			/* Logo on top of website */
+
+			.website-logo {
+				background: transparent;
+				margin-top: 15px;
+				width: 120px;
+				height: 120px;
+				align-self: center;
+			}
+
+			/* Positioning of the header items*/
+
+			.header-item{
+				width: 33%;
+				
+			}
+
+			.header-right {
+				align-items: flex-end;
+				display: flex;
+				flex-direction: row;
+				justify-content: flex-end;
+			}
+
+			.header-right ul {
+				display: flex;
+				flex-flow: row nowrap;
+				justify-content: flex-end;
+				text-align: center;
+				
+				margin: 0px 0px 15px 0px;
+				padding: 0px;
+
+			}
+
+			.header-right ul li {
+				margin-left: 20px;
+				padding-top: 0px;
+			}
+
+			.header-right ul li:hover {
+				cursor: pointer;
+			}
+
+			.header-right button, input{
+				padding: 0;
+				border: none;
+				background: none;
+				color: #585858;
+				font-size: 16px;
+				font-family: "Montserrat","HelveticaNeue","Helvetica Neue",sans-serif;
+			}
+
+			.header-right button:hover {
+				cursor: pointer;
+			}
+
+			@media all and (max-width: 670px){
+						
+
+						.header-item{
+							width: auto;
+						}
+
+						.header-right ul {
+							display: flex;
+							flex-flow: row nowrap;
+							justify-content: center;
+							text-align: center;
+						}
+
+						.header-right ul li {
+							min-width: 50px;
+						}	
+
+						
+					}
+
+
+			/* Formatting of the navigation menu */
+
+			nav {
+				background-color: #2d2d2d;
+				margin: 0;
+				border-radius: 4px;
+			}
+
+
+			nav ul {
+				display: flex;
+				flex-flow: row nowrap;
+				justify-content: flex-start;
+				text-align: center;
+				margin: 0px;
+				padding: 0px;
+			}
+
+			nav li {
+				width: 20%;
+				padding: 10px 0px 10px 0px;
+
+			}
+
+			nav a{
+				color: white;
+				
+			}
+
+			nav a:hover{
+				border-bottom: 3px solid white;
+			}
+
+			@media all and (max-width: 670px){
+						nav ul {
+							flex-direction: column;
+							align-items: center;
+						}
+
+						nav li{
+							padding: 3px 0px 3px 0px;
+							width: 100%;
+					}
+			}
+
+
+			/*Popup Login*/
+
+	/* Center the image and position the close button */
+.modal-close {
+    text-align: center;
+    /*margin: 24px 0 12px 0;*/
+    position: relative;
+    text-align:center;
+    color: #585858;
+}
+
+/* The Modal (background) */
+.modal {
+	display: none;
+    position: absolute;
+    /*z-index: 1;*/
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+
+}
+
+
+/* Modal Content Box */
+.modal-content {
+    background-color: #ffffff;
+    margin: 4% auto 10% auto;
+    border: 1px solid #888;
+    width: 30%; 
+	padding-bottom: 10px;
+	border-radius: 4px;
+}
+
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    animation: zoom 0.6s
+}
+@keyframes zoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+.login-form input, button {
+	font-family: "Montserrat","HelveticaNeue","Helvetica Neue",sans-serif;
+	font-size: 16px;
+	margin-bottom: 5px;
+}
+.modal button {
+	width: 85px;
+	height: 30px;
+}
+
+.modal button:hover,a:hover{
+				cursor: pointer;
+}
+
+.register-form input, button {
+	font-family: "Montserrat","HelveticaNeue","Helvetica Neue",sans-serif;
+	font-size: 16px;
+	margin-bottom: 5px;
+	height: 25px;
+	border: 1px solid black;
+	border-radius: 4px;
+}
+
+.register-form button {
+	width: 85px;
+}
+
+.register-form p{
+	font-family: "Montserrat","HelveticaNeue","Helvetica Neue",sans-serif;
+	font-size: 16px;
+	color: #585858;
+	margin-bottom: 4px;
+	margin-top: 0px;
+	margin-right: 4px;
+	margin-left: 4px;
+}
+
+
+/* Homepage picture and text in middle */
+
+.home-content-container{
+	margin: 10px 0px 10px 0px;
+	width: 100%;
+	min-height: 500px;
+	height: auto;
+	position: relative;
+	text-align: center;
+	color: white;
+	background-image: url('./Pictures/background.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center; 
+	border-radius: 4px;
+}
+
+.welcome-text-on-picture {
+	position: absolute;
+	min-width: 300px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: white;
+	color: #585858;
+	padding: 10px 10px 10px 10px;
+	opacity: 0.9;
+	border-radius: 4px;
+	display: inline; 
+
+}
+
+.welcome-text-on-picture a{
+	text-decoration: underline;
+	font-weight: 1000;
+	/*text-transform: uppercase;*/
+}
+
+@media all and (max-width: 670px){
+			.home-content-container{
+			min-height: 500px;
+			max-height: 500px;
+		}
+	}
+
+/* Contact page*/
+
+.contact-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+
+
+
+.contact-container input, select, textarea {
+	width: 250px;
+	height: 30px; 
+	padding: 12px;  
+	border: 1px solid #ccc; 
+	border-radius: 4px; 
+	box-sizing: border-box; 
+	margin: 6px 0 16px 0px;
+	resize: none; 
+	font-size: 16px;
+	color: #585858;
+	font-family: "Montserrat","HelveticaNeue","Helvetica Neue",sans-serif;
+}
+
+.contact-container input[type=checkbox]{
+	width: 15px;
+	height: 15px;
+}
+
+.contact-form{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.contact-container input[type=submit] {
+	height: auto;
+	width: 200px;
+	background-color: #2d2d2d;
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	text-align: center;
+	font-size: 16px;
+	font-family: "Montserrat","HelveticaNeue","Helvetica Neue",sans-serif;
+}
+
+.contact-container {
+	margin: 10px 0px 10px 0px;
+	border-radius: 5px;
+	background-color: #f2f2f2;
+	padding: 20px;
+	text-align: left;
+}
+
+/* Shop page*/
+
+.shop-container {
+	background-color: #eee;
+	border-radius: 4px;
+	margin: 10px 0px 10px 0px;
+}
+
+.product-filter {
+	margin: 10px 20px 0px 20px;
+	display: flex;
+	flex-direction: row;
+	
+}
+
+/* Push filters to the right */
+.product-filter h2 {
+	flex-grow: 1;
+}
+
+.top-down{
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+}
+
+.collection-sort {
+	margin-left: 5px;
+}
+
+.sort {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product-card {
+  padding: 2%;
+  flex-grow: 1;
+  flex-basis: 16%;
+  display: flex; 
+  max-width: 270px;
+}
+
+@media (max-width: 670px) {
+  
+.products{
+	flex-direction: column;
+}
+
+.product-card {
+flex-grow: 1;
+flex-basis: 21%;
+}
+}
+
+.product-image img {
+  /*max-width: 100%;*/
+  max-width: 300px;
+  transition: all .35s ease-in-out; 
+}
+
+.product-image img:hover{
+	cursor: pointer;
+	transform: scale(1.05);
+}
+
+.product-info {
+  margin-top: auto;
+}
+
+.products .product-card:first-child, 
+.products .product-card:nth-child(2) {
+  flex: 2 46%;
+}
+
+
+
+/* Footer */
+
+footer {
+	background-color: #eee;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	padding-bottom: 15px; 
+	border-radius: 4px;
+
+}
+
+footer ul{
+	list-style-type: none;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0;
+	margin: 0;
+}
+
+footer a:hover{
+	border-bottom: 3px solid #585858;
+}
+
+.social-media-icons ul{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+
